@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Pelo de Oso</string>
+    <string name="navigation_drawer_open">Abrir el cajón de navegación</string>
+    <string name="navigation_drawer_close">Cerrar el cajón de navegación</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Encabezado de navegación</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="title_activity_login">Iniciar Sesion</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Contraseña (opcional)</string>
+    <string name="action_sign_in">Ingresa o Registro</string>
+    <string name="action_sign_in_short">Registrarse</string>
+    <string name="error_invalid_email">Esta dirección de correo electrónico no es válida.</string>
+    <string name="error_invalid_password">Esta contraseña es muy corta</string>
+    <string name="error_incorrect_password">Esta contraseña es incorrecta</string>
+    <string name="error_field_required">este campo es requerido</string>
+    <string name="permission_rationale">"Se necesitan permisos de contactos para proporcionar compleciones de correo electrónico."
+    </string>
+</resources>
