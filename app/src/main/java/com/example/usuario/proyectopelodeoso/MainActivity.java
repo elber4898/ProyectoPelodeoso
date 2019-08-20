@@ -13,6 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.usuario.proyectopelodeoso.fragments.DetailProductFragment;
+import com.example.usuario.proyectopelodeoso.fragments.ListProductFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //
+        changeFrame("listproduct");
+        //
+
     }
 
     @Override
@@ -52,12 +59,29 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    //******
+    public void changeFrame(String name){
+        if (name.equals("listproduct")){
+            getFragmentManager().beginTransaction().
+                    replace(R.id.mainFragment, new ListProductFragment()).
+                    addToBackStack(null).commit();
+        }else if (name.equals("detailproduct")){
+            getFragmentManager().beginTransaction().
+                    replace(R.id.mainFragment, new DetailProductFragment()).
+                    addToBackStack(null).commit();
+        }
+
+    }
+    //
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
