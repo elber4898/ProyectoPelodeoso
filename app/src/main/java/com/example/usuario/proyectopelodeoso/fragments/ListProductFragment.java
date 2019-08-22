@@ -7,8 +7,13 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.usuario.proyectopelodeoso.R;
+import com.example.usuario.proyectopelodeoso.models.ProductModel;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +55,9 @@ public class ListProductFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
+
+
     }
 
     @Override
@@ -58,14 +66,32 @@ public class ListProductFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+
+
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_product, container, false);
+        View o = inflater.inflate(R.layout.fragment_list_product, container, false);
+        Button btn =(Button)o.findViewById(R.id.btnPrueba);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ProductModel i = new ProductModel(0,"CHOMPA CUELLO O",27.15,5,"SDFSDFDFG");
+                i.setLocal(ListProductFragment.this.getActivity());
+                ArrayList<ProductModel> m = i.getAll(ListProductFragment.this.getActivity());
+                Toast.makeText(ListProductFragment.this.getActivity(), ""+m.size(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return o;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
